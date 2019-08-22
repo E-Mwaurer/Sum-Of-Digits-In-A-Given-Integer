@@ -5,13 +5,14 @@ import './style.css';
 const appDiv: HTMLElement = document.getElementById('app');
 appDiv.innerHTML = `<h1>Algorithm Challenge 4</h1>`;
 function addTwoDigits(n: any): number {
+  const stringified = n.toString();
+  const v = stringified.split('');
   const values = [];
-  const j = n.toString();
-  const v = j.split('');
-  for (let k = 0; k < v.length; k++) {
-    values.push(parseInt(v[k]));
+  for (let i = 0; i < v.length; i++) {
+    values.push(parseInt(v[i]));
   }
-  console.log("object", values);
+  const sum = values.reduce((acc, val) => acc + val, 0);
+  return sum;
 }
 
-console.log(addTwoDigits(294));
+console.log(addTwoDigits(29));
